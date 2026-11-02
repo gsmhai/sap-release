@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NotifyGuard · 下载</title>
+  <meta name="description" content="NotifyGuard 桌面通知助手 —— 安装版、绿色单文件版下载与更新日志。" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121a30;
+      --card: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.09);
+      --text: #e8edf7;
+      --text-dim: #9aa6c2;
+      --brand: #5b8cff;
+      --brand-2: #9b6bff;
+      --accent: #38e0b0;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6fb;
+        --bg-soft: #ffffff;
+        --card: #ffffff;
+        --card-border: rgba(20, 30, 60, 0.08);
+        --text: #14213d;
+        --text-dim: #5a6685;
+        --shadow: 0 20px 50px rgba(20, 40, 90, 0.12);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(91, 140, 255, 0.18), transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, rgba(155, 107, 255, 0.16), transparent 55%),
+        var(--bg);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 22px 64px; }
+
+    /* Hero */
+    header.hero {
+      text-align: center;
+      padding: 72px 0 36px;
+    }
+    .logo {
+      width: 84px; height: 84px; margin: 0 auto 18px;
+      border-radius: 24px;
+      display: grid; place-items: center;
+      background: linear-gradient(140deg, var(--brand), var(--brand-2));
+      box-shadow: 0 14px 40px rgba(91, 140, 255, 0.35);
+    }
+    .logo svg { width: 44px; height: 44px; }
+    h1 {
+      font-size: clamp(30px, 5vw, 44px);
+      letter-spacing: 0.5px;
+      background: linear-gradient(120deg, var(--text), var(--brand));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline { color: var(--text-dim); margin-top: 10px; font-size: 16px; }
+    .version-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 18px; padding: 7px 16px; border-radius: 999px;
+      background: var(--card); border: 1px solid var(--card-border);
+      font-size: 14px; color: var(--text-dim);
+    }
+    .version-pill b { color: var(--text); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+
+    /* Download cards */
+    .grid {
+      display: grid; gap: 18px; margin-top: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 26px 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, border-color 0.18s ease;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--brand); }
+    .card .ico {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: rgba(91, 140, 255, 0.14); color: var(--brand); margin-bottom: 14px;
+    }
+    .card h3 { font-size: 19px; }
+    .card p { color: var(--text-dim); font-size: 14px; margin: 8px 0 18px; flex: 1; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 18px; border-radius: 12px; font-weight: 600; font-size: 15px;
+      text-decoration: none; color: #fff;
+      background: linear-gradient(120deg, var(--brand), var(--brand-2));
+      transition: filter 0.15s ease, transform 0.15s ease;
+    }
+    .btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn.ghost {
+      background: transparent; color: var(--text); border: 1px solid var(--card-border);
+    }
+    .btn.ghost:hover { border-color: var(--brand); }
+
+    /* Changelog */
+    section { margin-top: 54px; }
+    .section-title {
+      font-size: 22px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+    }
+    .section-title::before {
+      content: ""; width: 4px; height: 22px; border-radius: 4px;
+      background: linear-gradient(var(--brand), var(--brand-2));
+    }
+    .log {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 24px 26px; box-shadow: var(--shadow);
+    }
+    .log .meta { color: var(--text-dim); font-size: 13px; margin-bottom: 12px; }
+    .log .notes { white-space: pre-wrap; color: var(--text); font-size: 15px; }
+    .log .notes:empty::before { content: "暂无更新说明。"; color: var(--text-dim); }
+
+    .note {
+      margin-top: 16px; font-size: 13px; color: var(--text-dim);
+      background: var(--card); border: 1px dashed var(--card-border);
+      border-radius: 12px; padding: 14px 16px;
+    }
+    footer {
+      text-align: center; margin-top: 56px; color: var(--text-dim); font-size: 13px;
+    }
+    footer a { color: var(--brand); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg>
+      </div>
+      <h1>NotifyGuard</h1>
+      <p class="tagline">桌面通知与工时助手 · 轻量、常驻、随时更新</p>
+      <div class="version-pill">
+        <span class="dot"></span>
+        当前版本 <b id="version">加载中…</b>
+        <span id="date"></span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </div>
+        <h3>安装版（推荐）</h3>
+        <p>NSIS 安装包，自动写入开始菜单与卸载项，支持应用内一键更新。</p>
+        <a class="btn" href="./NotifyGuard_setup_latest.exe" download>下载安装包</a>
+      </div>
+
+      <div class="card">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="12" y1="18" x2="12" y2="12" />
+            <polyline points="9 15 12 18 15 15" />
+          </svg>
+        </div>
+        <h3>绿色单文件版</h3>
+        <p>单个 exe，免安装、可放任意目录、可随 U 盘携带，同样支持在线更新。</p>
+        <a class="btn" href="./notify-guard.exe" download>下载单文件</a>
+      </div>
+
+      <div class="card" id="msi-card">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <line x1="3" y1="9" x2="21" y2="9" />
+            <line x1="9" y1="21" x2="9" y2="9" />
+          </svg>
+        </div>
+        <h3>MSI 企业版</h3>
+        <p>适合域控 / 批量部署，支持组策略静默安装。</p>
+        <a class="btn" id="msi-link" href="#" download>下载 MSI</a>
+      </div>
+    </div>
+
+    <div class="note">
+      提示：绿色单文件版为自包含 exe，移动位置不影响使用，但请保留原文件名以便应用内更新定位自身。
+    </div>
+
+    <section>
+      <h2 class="section-title">更新日志</h2>
+      <div class="log">
+        <div class="meta" id="log-meta"></div>
+        <div class="notes" id="log-notes"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>由 GitHub Pages 自动发布 · 数据来自 <a href="./latest.json">latest.json</a></p>
+      <p style="margin-top:6px">© NotifyGuard · 开源分发</p>
+    </footer>
+  </div>
+
+  <script>
+    // 读取同目录下的 latest.json（GitHub Pages 同源，无需担心 CORS）
+    (async function () {
+      try {
+        const res = await fetch("./latest.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+
+        const v = data.version || "未知";
+        document.getElementById("version").textContent = v;
+
+        if (data.pub_date) {
+          const d = new Date(data.pub_date);
+          if (!isNaN(d)) {
+            document.getElementById("date").textContent =
+              "· " + d.toISOString().slice(0, 10);
+          }
+        }
+
+        // 更新日志
+        const notes = data.notes || data.body || "";
+        document.getElementById("log-notes").textContent = notes;
+        document.getElementById("log-meta").textContent =
+          "NotifyGuard " + v + (data.pub_date ? " · " + data.pub_date : "");
+
+        // 若 latest.json 含 MSI 平台条目，则展示 MSI 下载卡
+        const platforms = (data.platforms && typeof data.platforms === "object") ? data.platforms : {};
+        const msi = platforms["windows-x86_64-msi"];
+        if (msi && msi.url) {
+          const card = document.getElementById("msi-card");
+          const link = document.getElementById("msi-link");
+          link.href = msi.url;
+          card.classList.remove("hidden");
+        }
+      } catch (e) {
+        // 取不到清单时给出兜底，下载按钮仍可用
+        document.getElementById("version").textContent = "（离线）";
+        document.getElementById("log-notes").textContent =
+          "无法读取更新清单（latest.json）。请检查网络后刷新，或直接点击下方按钮下载最新安装包。";
+        document.getElementById("msi-card").classList.add("hidden");
+      }
+    })();
+  </script>
+</body>
+</html>
