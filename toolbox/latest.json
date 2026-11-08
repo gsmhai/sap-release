@@ -1,10 +1,10 @@
 {
   "version": "1.1.0",
   "notes": "SAPToolbox automated build",
-  "pub_date": "2026-11-08T03:06:15Z",
+  "pub_date": "2026-11-08T03:14:57Z",
   "platforms": {
     "windows-x86_64-single": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQXMwK2NFaE5UVm9GaFhXUHNNeVJFc1ZmdWhLUjBkRkdFQTF2Zzh3OTZlRGgwcWJiZEM2N3kzT2tqclljV0NNWDJ5cVZMQ0xLdnY4QnVVOXF4SG1Bc2FIZ1UxMEVmOUFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTA3MTc1CWZpbGU6U0FQVG9vbGJveC43egl2ZXJzaW9uOjEuMS4wCnovcDdjVnlHWlhIenQ3eDRZRmVQRUdTSk1iTndZTGRmMEtWaStnTCswMXRVVUh3N1pmUFY0VVM0Szh4WDlyWUJNbCtnZ2ZoVVdEdEhJaHBWaHoyRUFBPT0K",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRQXMwK2NFaE5UVml3STZ4bWFVTm5aTmdqaDlxMURLVEd6Q2J2L3AvWVR6NWUvWFVmTldMY0lOTjBQNVhFRlpKNVdtbEw4WHNDZTZHMk5LcFJIcStiWDErK2ErT3NhRXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTA3Njk3CWZpbGU6U0FQVG9vbGJveC43egl2ZXJzaW9uOjEuMS4wClQ1MWsrK01xWEt5SEhaa0loYnl3Kzl3aFpIaGUreFlRLzFmenlqYjlTVnVqOUliZnd2SUlZVEhNZVVmRXZlK1pvTTFmc05xeTM0amZOYjM1YVVidUN3PT0K",
       "url": "https://gsmhai.github.io/sap-release/toolbox/SAPToolbox.7z?v=1.1.0"
     }
   }
